@@ -133,9 +133,12 @@ router.get("/login", (req, res) => {
      username,
      (err, result) => {
        if (err) {
+        console.log(err)
          res.send({ err: err });
+
        }
-     
+
+       console.log(err)
        if (result.length > 0) {
          bcrypt.compare(
            password.toString(),
