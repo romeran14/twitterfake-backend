@@ -49,5 +49,5 @@ const tweetsOfRoute = require('./routes/TweetsOf');
 app.use('/tweetsof', tweetsOfRoute);
 
 app.listen(PORT, (req, res) => {
-   console.log('Server running..')
+   console.log('Server running..', CLIENT_PORT)
 });
