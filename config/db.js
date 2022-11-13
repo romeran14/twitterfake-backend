@@ -1,4 +1,5 @@
-const mysql      = require('mysql');
+const mysql      = require('mysql2');
+
 const HOST = process.env.HOST
 const USER_DB= process.env.USER_DB
 const PASSWORD_DB = process.env.PASSWORD_DB
