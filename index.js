@@ -15,9 +15,9 @@ const SECRET = process.env.SECRET
 
 app.use(express.json())
 app.use(cors({
-   origin: [CLIENT_PORT],
-   methods: ["GET", "POST", "DELETE", "PUT"],
-   credentials: true,
+  // origin: [CLIENT_PORT],
+  // methods: ["GET", "POST", "DELETE", "PUT"],
+   //credentials: true,
 
 }));
 
