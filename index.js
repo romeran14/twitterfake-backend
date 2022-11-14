@@ -14,8 +14,20 @@ const SECRET = process.env.SECRET
 
 
 app.use(express.json())
+var whitelist = [CLIENT_PORT]
+var corsOptions = {
+   origin : function (origin, callback){
+      if(whitelist.indexOf(origin) !== -1){
+         callback(null, true)
+
+      }else{
+         callback(new Error ('Not Allowed by CORS'))
+      }
+   }
+}
+
 app.use(cors({
-   origin: [CLIENT_PORT],
+   origin: corsOptions,
    methods: ["GET", "POST", "DELETE", "PUT"],
    credentials: true,
 
