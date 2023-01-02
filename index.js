@@ -59,7 +59,7 @@ app.use('/upload', uploadRoute);
 
 const tweetsOfRoute = require('./routes/TweetsOf');
 app.use('/tweetsof', tweetsOfRoute);
-
+console.log('AQUI')
 app.listen(PORT, (req, res) => {
    console.log('Server running..')
 });
