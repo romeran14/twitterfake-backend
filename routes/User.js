@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt")
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const session = require("express-session")
-
+const disconectDb = require("../utils/disconectDb")
 
 
 const db = require('../config/db')
@@ -95,7 +95,9 @@ router.get("/:id/verify/:token/", async (req, res) => {
         } else {
           res.send({ message: "User doesn't exist" });
         }
-      }
+         db.end();
+      },
+     
     );
 
 	} catch (error) {
@@ -172,6 +174,7 @@ router.get("/login", (req, res) => {
        }
      }
    );
+   disconectDb()
  });
 
  router.post("/restorepassword", async (req, res) => {
