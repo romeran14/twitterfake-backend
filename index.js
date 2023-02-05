@@ -25,13 +25,13 @@ var corsOptions = {
       }
    }
 }
-
+/*
 app.use(cors({
    origin: corsOptions,
    methods: ["GET", "POST", "DELETE", "PUT"],
    credentials: true,
 
-}));
+}));*/
 
 app.use(cookieParser())
 
