@@ -11,7 +11,10 @@ const db = mysql.createConnection({
   password : PASSWORD_DB,
   database : DATA_BASE,
   multipleStatements: true,
-  port : DATA_BASE_PORT
+  port : DATA_BASE_PORT,
+  ssl:{
+    rejectUnauthorized:false
+  }
 });
 
 module.exports = db;
