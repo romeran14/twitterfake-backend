@@ -6,7 +6,7 @@ const PASSWORD_DB = process.env.PASSWORD_DB
 const DATA_BASE = process.env.DATA_BASE
 const DATA_BASE_PORT =process.env.DATA_BASE_PORT
 //const db = mysql.createConnection(process.env.DATABASE_URL)
-console.log("SAPIN",HOST)
+
 const db = mysql.createConnection({
   host     : HOST,
   user     : USER_DB,
@@ -14,9 +14,9 @@ const db = mysql.createConnection({
   database : DATA_BASE,
   multipleStatements: true,
   port : DATA_BASE_PORT,
-  /*ssl:{
+  ssl:{
     rejectUnauthorized:false
-  }*/
+  }
 });
-console.log("DATABASEEEEEE",  HOST, USER_DB,PASSWORD_DB, DATA_BASE, DATA_BASE_PORT,db)
+console.log("DATABASEEEEEE",  HOST, USER_DB,PASSWORD_DB, DATA_BASE, DATA_BASE_PORT,db.authorized)
 module.exports = db;
