@@ -7,7 +7,10 @@ const DATA_BASE = process.env.DATA_BASE
 const DATA_BASE_PORT =process.env.DATA_BASE_PORT
 const db = mysql.createConnection({
   multipleStatements: true,
-  uri:process.env.DATABASE_URL
+  uri:process.env.DATABASE_URL,
+      waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 })
 
 // const db = mysql.createConnection({
