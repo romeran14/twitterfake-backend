@@ -18,5 +18,13 @@ const db = mysql.createConnection({
     rejectUnauthorized:false
   }*/
 });
-console.log(db)
+console.log("DATABASEEEEEE", {
+  host     : HOST,
+  user     : USER_DB,
+  password : PASSWORD_DB,
+  database : DATA_BASE,
+  multipleStatements: true,
+  port : DATA_BASE_PORT,
+
+},db)
 module.exports = db;
