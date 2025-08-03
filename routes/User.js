@@ -129,7 +129,7 @@ router.get("/login", (req, res) => {
  router.post("/login", (req, res) => {
    const username = req.body.username;
    const password = req.body.password;
-
+   console.log("LOGIN",username, password)
    db.query(
      "SELECT * FROM users WHERE Username = ? LIMIT 1; SELECT Userid, Username, user_img FROM `users`; ",
      username,
