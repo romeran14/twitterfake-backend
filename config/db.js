@@ -4,11 +4,12 @@ const HOST = process.env.HOST
 const USER_DB= process.env.USER_DB
 const PASSWORD_DB = process.env.PASSWORD_DB
 const DATA_BASE = process.env.DATA_BASE
+const DATA_BASE_URL = process.env.DATA_BASE
 const DATA_BASE_PORT =process.env.DATA_BASE_PORT
 const db = mysql.createConnection({
   multipleStatements: true,
-  uri:"mysql://root:TFtAGldgEXVhxHsMddZpnmwytqXCewwn@hopper.proxy.rlwy.net:24410/railway",
-      waitForConnections: true,
+    uri:DATA_BASE_URL,
+    waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
 })
